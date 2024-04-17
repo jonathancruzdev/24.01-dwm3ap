@@ -1,0 +1,11 @@
+{
+    "data": [
+        {"nombre": "Juan", "tel": "11-2222-3412", "email": "juan@mail.com"},
+        {"nombre": "Micaela", "tel": "11-4444-4444", "email": "micaela@mail.com"},
+        {"nombre": "Emanuel", "tel": "11-3333-3333", "email": "emanuel@mail.com"},
+        {"nombre": "Rocio", "tel": "11-3333-3412", "email": "rocio@mail.com"},
+        {"nombre": "Julieta", "tel": "11-6666-1111", "email": "juelieta@mail.com"},
+        {"nombre": "Pepe", "tel": "", "email": "pepe@mail.com"}
+    ],
+    "version": "1.0.2"
+}

@@ -34,9 +34,17 @@ const renderizarContactos = (lista) => {
     lista.forEach(contacto => {
         listContactos.innerHTML += `
         <li class="list-group-item">
-            <strong> ${ contacto.nombre }</strong>
-            <span> ${ contacto.tel} </span>
+            <span class="d-flex justify-content-between">
+                <span>
 
+                    <strong> ${ contacto.nombre }</strong>
+                    <span> ${ contacto.tel} </span>
+                </span>
+
+                <button class="btn btn-danger" type="button">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </span>
         </li>`;
     });
 }
