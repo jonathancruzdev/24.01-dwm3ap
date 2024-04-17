@@ -31,21 +31,34 @@ form.addEventListener('submit', (e) => {
 const renderizarContactos = (lista) => {
     // Limpio el contenedor
     listContactos.innerHTML = '';
-    lista.forEach(contacto => {
+    lista.forEach( (contacto, index) => {
         listContactos.innerHTML += `
         <li class="list-group-item">
             <span class="d-flex justify-content-between">
                 <span>
-
-                    <strong> ${ contacto.nombre }</strong>
-                    <span> ${ contacto.tel} </span>
+                    <span>
+                        <i class="fa-solid fa-user text-primary"></i>
+                        <strong> ${ contacto.nombre }</strong>
+                    </span>
+                    <br>
+                    <span>
+                        <i class="fa-solid fa-mobile-screen text-success"></i> ${ contacto.tel}
+                    </span>
                 </span>
 
-                <button class="btn btn-danger" type="button">
+                <button id="${index}" class="btn btn-danger btn-delete" type="button">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </span>
         </li>`;
+    });
+
+    const btns = document.querySelectorAll('.btn-delete');
+    btns.forEach( btn => {
+        btn.addEventListener('click', (e) => {
+            const id = e.target.id;
+            deleteContacto(id);
+        })
     });
 }
 
@@ -71,6 +84,15 @@ const getContactos = async () => {
     }
 }
 
+ // Funcion 4 - Elimina un contacto
+const deleteContacto = ( index) =>{
+    console.log(index);
+    // Elimino localmente
+    contactos.splice(index, 1);
+    console.log(contactos);
+    // Actualización
+    renderizarContactos(contactos);
+} 
 
 const renderError = (msg) =>{
     listContactos.innerHTML = 
